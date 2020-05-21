@@ -205,14 +205,16 @@ class Ui_MainWindow(object):
         self.pushButtonUpdateResult.clicked.connect(self.updateResult)
 
     def chooseFirstImage(self):
-        filename = QtWidgets.QFileDialog.getOpenFileName(None, "Select First Image", "/Users/parthdoshi/Documents/Crack Detection using Image Processing/", "PNG Files (*.png)")
+        #Path for choosing First Image
+        filename = QtWidgets.QFileDialog.getOpenFileName(None, "Select First Image", ".../Documents/Crack Detection using Image Processing/", "PNG Files (*.png)")
         self.labelFirstImage.setPixmap(QtGui.QPixmap(filename[0]).scaled(384, 216))
         self.firstImage = filename[0]
         file_name = str(filename[0])
         self.timestampFirstImage = file_name[len(file_name)-30 : len(file_name)-4]
 
     def chooseSecondImage(self):
-        filename = QtWidgets.QFileDialog.getOpenFileName(None, "Select First Image", "/Users/parthdoshi/Documents/Crack Detection using Image Processing/", "PNG Files (*.png)")
+        #Path for choosing Second Image
+        filename = QtWidgets.QFileDialog.getOpenFileName(None, "Select Second Image", ".../Documents/Crack Detection using Image Processing/", "PNG Files (*.png)")
         self.labelSecondImage.setPixmap(QtGui.QPixmap(filename[0]).scaled(384, 216))
         self.secondImage = filename[0]
         file_name = str(filename[0])
@@ -228,8 +230,10 @@ class Ui_MainWindow(object):
             cv2.setWindowProperty(windowName, cv2.WND_PROP_TOPMOST, cv2.WINDOW_GUI_NORMAL)
             cv2.imshow(windowName,frame)
             if cv2.waitKey(1) & 0xFF == ord('q'):
-                cv2.imwrite("/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampFirstImage+".png",frame)
-                self.firstImage = "/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampFirstImage+".png"
+                #Path for saving First Captured Image
+                cv2.imwrite(".../Documents/Crack Detection using Image Processing/"+self.timestampFirstImage+".png",frame)
+                #Path for opening First Captured Image
+                self.firstImage = ".../Documents/Crack Detection using Image Processing/"+self.timestampFirstImage+".png"
                 break
         cap.release()
         cv2.destroyAllWindows()
@@ -245,8 +249,10 @@ class Ui_MainWindow(object):
             cv2.setWindowProperty(windowName, cv2.WND_PROP_TOPMOST, cv2.WINDOW_GUI_NORMAL)
             cv2.imshow(windowName,frame)
             if cv2.waitKey(1) & 0xFF == ord('q'):
-                cv2.imwrite("/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampSecondImage+".png",frame)
-                self.secondImage = "/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampSecondImage+".png"
+                #Path for saving Second Captured Image
+                cv2.imwrite(".../Documents/Crack Detection using Image Processing/"+self.timestampSecondImage+".png",frame)
+                #Path for opening Second Captured Image
+                self.secondImage = ".../Documents/Crack Detection using Image Processing/"+self.timestampSecondImage+".png"
                 break
         cap.release()
         cv2.destroyAllWindows()
@@ -255,8 +261,10 @@ class Ui_MainWindow(object):
     def computeResult(self):
         self.timestampResultImage = str(datetime.now())
         differenceImage = ImageChops.difference(Image.open(self.firstImage), Image.open(self.secondImage))
-        differenceImage.convert('L').save("/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampResultImage+".png")
-        self.resultImage = "/Users/parthdoshi/Documents/Crack Detection using Image Processing/"+self.timestampResultImage+".png"
+        #Path for saving Result Image
+        differenceImage.convert('L').save(".../Documents/Crack Detection using Image Processing/"+self.timestampResultImage+".png")
+        #Path for opening Result Image
+        self.resultImage = ".../Documents/Crack Detection using Image Processing/"+self.timestampResultImage+".png"
         self.labelResultImage.setPixmap(QtGui.QPixmap(self.resultImage).scaled(384, 216))
         blackComponent = 0
         blackThreshold = 32
