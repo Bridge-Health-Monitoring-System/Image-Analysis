@@ -1,8 +1,15 @@
 # Image-Analysis
-Image Processing using Python for Crack Detection
+## By Parth Doshi
+Image Processing using Python PIL Library to check for Cracks, Corrosion and Deformities on different surfaces of the structure.
 </br>
-# Details
-This program is designed for image processing for the purpose of crack detection by comparing two different images
+# Description of Image Analysis Module
+ImageChops.difference() function from PIL Library is used to check for difference in two images.
+This program is designed for image processing for the purpose of crack detection by comparing two different images.
+Our idea is to take images from a particular site on the bridge over a certain time interval and the feeding it into the developed system in order to understand the change that it has gone through.
+The program also computes a numerical value for the percentage difference in the two images. 
+Pre-processing done on images converts them to greyscale first in order to reduce the requirement for computational resources.
+A threshold can be set which, when surpassed, will require the respective authority being notified.
+We are also sending the Percentage Difference Data to Cloud and to our Output App and sending it along with timestamps and input and result images to the specified EMail Address. 
 </br>
 # Modules
 - [PIL](https://pypi.org/project/Pillow/)
