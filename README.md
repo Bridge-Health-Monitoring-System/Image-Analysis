@@ -26,10 +26,10 @@ We are also sending the Percentage Difference Data to Cloud and to our Output Ap
 ## Basic Screen
 ![BasicScreen](https://github.com/Bridge-Health-Monitoring-System/Image-Analysis/blob/master/Outputs/Basic%20Screen.png)
 <br/>
-## First Spectrogram
+## First Image
 ![FirstSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Image-Analysis/blob/master/Outputs/First%20Image.png)
 <br/>
-## Second Spectrogram
+## Second Image
 ![SecondSpectrogram](https://github.com/Bridge-Health-Monitoring-System/Image-Analysis/blob/master/Outputs/Second%20Image.png)
 <br/>
 ## Result
