@@ -17,7 +17,7 @@ We are also sending the Percentage Difference Data to Cloud and to our Output Ap
 - [PyQt5](https://pypi.org/project/PyQt5/)
 - [firebase](https://pypi.org/project/firebase/)
 - [email](https://pypi.org/project/email/)
-- [stmplib](https://docs.python.org/3/library/smtplib.html)
+- [smtplib](https://docs.python.org/3/library/smtplib.html)
 - [sys](https://docs.python.org/3/library/sys.html)
 - [datetime](https://docs.python.org/3/library/time.html?highlight=time#module-time)
 
